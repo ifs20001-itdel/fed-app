@@ -1,8 +1,12 @@
 <?php
 
-use App\Http\Controllers\PPController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CRUDTableController;
+use App\Http\Controllers\KesimpulanController;
+use App\Http\Controllers\LoginController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,56 +19,88 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
+//ROUTE LOGIN
+
+Route::post('/login/auth', [LoginController::class, 'login']);
+
+Route::get('/user/login', function () {
+    return view('login');
+})->name('login');
+
+Route::get('/api/{useraccount}/{token}/{appid}', function () {
+})->middleware('auth.token');
+
+Route::get('/user/logout', [LoginController::class, 'logout']);
+
+Route::get('/logut', function () {
+    Auth::logout();
+    dd('berhasil');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+//-----------------------------------------------------------------------------------------------------
+
+
+//Route Konten
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/evaluasi-kerja/{jenisPelaksanaan}', [CRUDTableController::class, 'tampilData']);
+
+    Route::get('/biodata', function () {
+        return view('pages.biodata');
+    });
+
+    Route::get('/profil', function () {
+        return view('pages.profil');
+    });
+
+    Route::get('/', function () {
+        return view('pages.biodata');
+    })->name('home');
+
+
+    Route::post('/evaluasi-kerja/{jenisTabel}/tambah-data', [CRUDTableController::class, 'tambahData']);
+
+    Route::get('/evaluasi-kerja/edit/{id}', [CRUDTableController::class, 'editdata']);
+
+    Route::post('/evaluasi-kerja/edit-data', [CRUDTableController::class, 'update']);
+
+    Route::get('/evaluasi-kerja/delete/{id}', [CRUDTableController::class, 'destroy']);
+
+    // fungsi edit dan delete penelitian
+
+    Route::get('/evaluasi-kerja/edit2/{id}', [CRUDTableController::class, 'editdata2']);
+
+    Route::post('/evaluasi-kerja/edit-data2', [CRUDTableController::class, 'update2']);
+
+    Route::get('/evaluasi-kerja/delete2/{id}', [CRUDTableController::class, 'destroy2']);
+
+    // fungsi edit dan delete pengabdian
+
+    Route::get('/evaluasi-kerja/edit3/{id}', [CRUDTableController::class, 'editdata3']);
+
+    Route::post('/evaluasi-kerja/edit-data3', [CRUDTableController::class, 'update3']);
+
+    Route::get('/evaluasi-kerja/delete3/{id}', [CRUDTableController::class, 'destroy3']);
+
+    // fungsi edit dan delete penunjang
+
+    Route::get('/evaluasi-kerja/edit4/{id}', [CRUDTableController::class, 'editdata4']);
+
+    Route::post('/evaluasi-kerja/edit-data4', [CRUDTableController::class, 'update4']);
+
+    Route::get('/evaluasi-kerja/delete4/{id}', [CRUDTableController::class, 'destroy4']);
+
+    // fungsi edit dan delete kesimpulan
+
+    Route::get('/evaluasi-kerja/edit5/{id}', [CRUDTableController::class, 'editdata5']);
+
+    Route::post('/evaluasi-kerja/edit-data5', [CRUDTableController::class, 'update5']);
+
+    Route::get('/evaluasi-kerja/delete5/{id}', [CRUDTableController::class, 'destroy5']);
 });
 
-Route::get('/profile', function () {
-    return view('Konten.profile');
-});
 
-// Route::resource('pp', PPController::class);
-
-Route::get('/register', function () {
-    return view('register');
-});
-
-Route::get('/pp', function () {
-    return view('Konten.pp');
-});
-
-Route::get('/penelitian', function () {
-    return view('Konten.penelitian');
-});
-
-Route::get('/pengabdian', function () {
-    return view('Konten.pengabdian');
-});
-
-Route::get('/kesimpulan', function () {
-    return view('Konten.kesimpulan');
-});
-
-Route::get('/logout', function () {
-    return view('auth.login');
-});
-
-Route::get('/login', function () {
-    return view('Konten.profile');
-});
-
-// Route::get('/logout', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-require __DIR__.'/auth.php';
+// KESIMPULAN
+Route::get('/input', '\App\Http\Controllers\KesimpulanController@input');
+Route::post('/proses', '\App\Http\Controllers\KesimpulanController@proses');
