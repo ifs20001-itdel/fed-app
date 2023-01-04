@@ -1,10 +1,3 @@
-@extends('home')
-
-@section('page-title', 'kesimpulan')
-@section('breadcrumb-title', 'kesimpulan')
-
-@section('konten')
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,11 +10,14 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 </head>
-<a href="/cetak" target="_blank">CETAK</a>
 <div class="container">
     <div class="justify-content-center">
         <div class="card-body">
-            <table class="table table-bordered table-striped">
+            <table class="table table-bordered">
+                <tr class="table-secondary">
+                    <td>Jenis Kinerja</td>
+                    <td>Status</td>
+                </tr>
                 <tr>
                     <td>Pelaksanaan Pendidikan</td>
                     <td>{{ $data->status1 }}</td>
@@ -46,14 +42,9 @@
                     <td>Kriteria Pelaksanaan Pengabdian dan Pelaksanaan Penunjang</td>
                     <td>{{ $data->status6 }}</td>
                 </tr>
-                <tr>
-                    <td>TOTAL KINERJA</td>
-                    <td></td>
-                </tr>
-
             </table>
-
             <a href="/input" class="btn btn-primary">Kembali</a>
+            <button onclick="window.print()" class="btn btn-warning" style="float: right;">Cetak</button>
         </div>
     </div>
 </div>
@@ -61,6 +52,3 @@
 </body>
 
 </html>
-
-
-@endsection

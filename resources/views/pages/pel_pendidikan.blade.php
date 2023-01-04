@@ -329,9 +329,9 @@
             </button>
         </div>
         <div class="border rounded-lg overflow-auto d-block" id="bagianF">
-            <table class="w-full ">
+            <table class="w-full">
                 <thead>
-                    <<tr class="bg-theme-4">
+                    <tr class="bg-theme-4">
                         <th class="p-2 border-r-2 w-1">No</th>
                         <th class="p-2 border-r-2 w-2/6">Nama Kegiatan</th>
                         <th class="p-2 border-r-2 w-2/6">Bukti Penugasan</th>

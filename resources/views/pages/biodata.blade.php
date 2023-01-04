@@ -4,9 +4,6 @@
 @section('breadcrumb-title', 'Biodata')
 
 @section('konten')
-<div class=" mb-1 w-fit ml-auto">
-    @include('components.setting_biodata')
-</div>
 <div class="sm:rounded-lg p-3 bg-white border">
     <table class="w-full rounded-lg">
         <tr class="font-medium bg-gray-200">

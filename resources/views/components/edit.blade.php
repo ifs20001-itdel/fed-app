@@ -13,6 +13,18 @@
                     <div class="header flex justify-between border-b mb-3">
                         <h3>Update Data</h3>
                     </div>
+                    <div>
+                        {{-- menampilkan error validasi --}}
+                        @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+                    </div>
                     {{-- Modal Body --}}
                     <form action="/evaluasi-kerja/edit-data" method="POST">
                         @csrf

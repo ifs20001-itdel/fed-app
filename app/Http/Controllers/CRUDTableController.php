@@ -10,6 +10,19 @@ class CRUDTableController extends Controller
 {
     function tambahData(Request $request, $jenisTabel)
     {
+
+
+        $this->validate($request, [
+            'pelaksanaan' => 'required',
+            'namaKegiatan' => 'required',
+            'buktiPenugasan' => 'required',
+            'status' => 'required',
+            'jumlahKegiatan' => 'required',
+            'bebanTugas' => 'required',
+            'capaian' => 'required'
+        ]);
+
+
         $namatabel = "";
         $url = "";
         if ($jenisTabel == "pendidikan") {
@@ -129,8 +142,8 @@ class CRUDTableController extends Controller
     {
 
         $namatabel = $this->getNamaTabel("pendidikan");
-
         $dataTabel = DB::table($namatabel)->where('id', $id)->get();
+        
         return view('components.edit')->with('datapendidikan', $dataTabel);
     }
 

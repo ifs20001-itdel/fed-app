@@ -26,9 +26,8 @@
 <body class="bg-theme-4 flex opacity-100">
     <div class="sidenav w-2/12 text-white  border-r bg-gradient-to-b from-bluedesign to-skydesign h-screen sticky top-0">
         <div class="p-3 text-center">
-        <div class="pb-2" style="margin-left: 60px;">
-              <img src="https://icons.veryicon.com/png/o/internet--web/three-body-project-icon/user-126.png"
-                class="rounded-circle img-fluid" style="width: 100px;" />
+            <div class="pb-2" style="margin-left: 60px;">
+                <img src="https://icons.veryicon.com/png/o/internet--web/three-body-project-icon/user-126.png" class="rounded-circle img-fluid" style="width: 100px;" />
             </div>
             <p class=" font-bold" style="font-size: 13px;">Selamat Datang, {{ Auth::user()->nama }} <br> Dosen - Program Studi {{ Auth::user()->prodi }}</p>
             @include('components.sidenav')
@@ -37,9 +36,10 @@
     <div class=" justify-end grow shadow w-8/12">
         <header class="justify-between flex flex-grow border-b bg-white p-3 ">
             <div class="text-black logonih">
-                <p class="m-0 text-3xl font-bold">FRK-FED</p>
-                <p class="m-0 text-3xl font-bold">Institut Teknologi Del</p>
-
+                <a href="/profil" style="text-decoration: none; color:black;">
+                    <p class="m-0 text-3xl font-bold">FRK-FED</p>
+                    <p class="m-0 text-3xl font-bold">Institut Teknologi Del</p>
+                </a>
             </div>
             <div class="flex">
                 <div class="items-center flex gap-3">
@@ -59,6 +59,7 @@
                     @include('components.iconHall')
                     <h4 class="text-black mt-auto mr-auto mb-auto">Formulir Evaluasi Kerja Dosen - Semester Genap 2022/2023</h4>
                 </div>
+                @include('components.alert')
                 <hr class="mt-0 text-white">
                 <nav class="flex p-0 w-fit rounded-lg">
                     <a href="/biodata" class="bg-whitety p-3 hover:bg-bluedesign hover:text-white rounded-l-lg font-bold">Biodata</a>

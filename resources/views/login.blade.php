@@ -29,7 +29,7 @@
                         <div class="invalid-feedback"></div>
                     </div>
                     <div class="mb-4">
-                        <label for="password"><strong>Pasword</strong></label>
+                        <label for="password"><strong>Password</strong></label>
                         <input type="password" id="password" name="passwordLogin"
                             class="form-control @error('password') is-invalid @enderror"
                             placeholder="Silahkan masukkan password anda" onclick="removeRedBorder()">
