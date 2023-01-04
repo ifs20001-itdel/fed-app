@@ -104,3 +104,12 @@ Route::middleware(['auth'])->group(function () {
 // KESIMPULAN
 Route::get('/input', '\App\Http\Controllers\KesimpulanController@input');
 Route::post('/proses', '\App\Http\Controllers\KesimpulanController@proses');
+Route::post('/cetak', '\App\Http\Controllers\KesimpulanController@cetak');
+
+
+
+
+// CETAK
+Route::get('/cetak', function(){
+    return view('cetak');
+});

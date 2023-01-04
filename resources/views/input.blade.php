@@ -34,37 +34,91 @@
                         <tr>
                             <th>1</th>
                             <td><label for="status1">Pelaksanaan Pendidikan</label></td>
-                            <td><input type="text" class="form-control" name="status1" value="{{ old('status1') }}"></td>
+                            <td>
+                                <div>
+                                    {{-- <input type="text" name="status1" id="tambahStatus" class="form-control"> --}}
+                                    <select name="status1" id="status1" class="form-select">
+                                        <option value="Status">Status</option>
+                                        <option value="Memenuhi">Memenuhi</option>
+                                        <option value="Tidak Memenuhi">Tidak Memenuhi</option>
+                                    </select>
+                                </div>
+                            </td>
                         </tr>
 
                         <tr>
                             <th>2</th>
                             <td><label for="status2">Pelaksanaan Penelitian</label></td>
-                            <td><input type="text" class="form-control" name="status2" value="{{ old('status2') }}"></td>
+                            <td>
+                                <div>
+                                    {{-- <input type="text" name="status2" id="tambahStatus" class="form-control"> --}}
+                                    <select name="status2" id="status2" class="form-select">
+                                        <option value="Status">Status</option>
+                                        <option value="Memenuhi">Memenuhi</option>
+                                        <option value="Tidak Memenuhi">Tidak Memenuhi</option>
+                                    </select>
+                                </div>
+                            </td>
                         </tr>
 
                         <tr>
                             <th>3</th>
                             <td><label for="status3">Pelaksanaan Pengabdian</label></td>
-                            <td><input type="text" class="form-control" name="status3" value="{{ old('status3') }}"></td>
+                            <td>
+                                <div>
+                                    {{-- <input type="text" name="status3" id="tambahStatus" class="form-control"> --}}
+                                    <select name="status3" id="status3" class="form-select">
+                                        <option value="Status">Status</option>
+                                        <option value="Memenuhi">Memenuhi</option>
+                                        <option value="Tidak Memenuhi">Tidak Memenuhi</option>
+                                    </select>
+                                </div>
+                            </td>
                         </tr>
 
                         <tr>
                             <th>4</th>
                             <td><label for="status4">Pelaksanaan Penunjang</label></td>
-                            <td><input type="text" class="form-control" name="status4" value="{{ old('status4') }}"></td>
+                            <td>
+                                <div>
+                                    {{-- <input type="text" name="status4" id="tambahStatus" class="form-control"> --}}
+                                    <select name="status4" id="status4" class="form-select">
+                                        <option value="Status">Status</option>
+                                        <option value="Memenuhi">Memenuhi</option>
+                                        <option value="Tidak Memenuhi">Tidak Memenuhi</option>
+                                    </select>
+                                </div>
+                            </td>
                         </tr>
 
                         <tr style="background-color: #FFFBC1;">
                             <th>5</th>
                             <td><label for="status5">Kriteria Pelaksanaan Pendidikan dan Pelaksanaan Penelitian</label></td>
-                            <td><input type="text" class="form-control" name="status5" value="{{ old('status5') }}"></td>
+                            <td>
+                                <div>
+                                    {{-- <input type="text" name="status5" id="tambahStatus" class="form-control"> --}}
+                                    <select name="status5" id="status5" class="form-select">
+                                        <option value="Status">Status</option>
+                                        <option value="Memenuhi">Memenuhi</option>
+                                        <option value="Tidak Memenuhi">Tidak Memenuhi</option>
+                                    </select>
+                                </div>
+                            </td>
                         </tr>
 
                         <tr style="background-color: #FFFBC1;">
                             <th>6</th>
                             <td><label for="status6">Kriteria Pelaksanaan Pengabdian dan Pelaksanaan Penunjang</label></td>
-                            <td><input type="text" class="form-control" name="status6" value="{{ old('status6') }}"></td>
+                            <td>
+                                <div>
+                                    {{-- <input type="text" name="status6" id="tambahStatus" class="form-control"> --}}
+                                    <select name="status6" id="status6" class="form-select">
+                                        <option value="Status">Status</option>
+                                        <option value="Memenuhi">Memenuhi</option>
+                                        <option value="Tidak Memenuhi">Tidak Memenuhi</option>
+                                    </select>
+                                </div>
+                            </td>
                         </tr>
 
                         <tr>

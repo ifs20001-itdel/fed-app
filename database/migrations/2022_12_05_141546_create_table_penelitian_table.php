@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('bukti_penugasan');
             $table->string('status');
             $table->integer('jumlah_kegiatan');
-            $table->decimal('beban_tugas', 8, 4);
+            $table->integer('beban_tugas');
             $table->string('capaian');
             $table->timestamps();
         });
